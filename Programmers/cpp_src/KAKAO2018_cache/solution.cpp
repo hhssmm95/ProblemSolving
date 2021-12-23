@@ -2,14 +2,11 @@
 #include <vector>
 #include <list>
 #include <unordered_map>
-#include <iostream>
 using namespace std;
 
 list<string> dq;
 unordered_map<string, list<string>::iterator> ma;
 int csize;
-
-
 
 int refer(string x)
 {
@@ -63,16 +60,4 @@ int solution(int cacheSize, vector<string> cities) {
 	}
 
 	return answer;
-}
-
-int main()
-{
-	vector<string> test_vector1 = { "Jeju", "Pangyo", "NewYork", "newyork" };//{9, 20, 28, 18, 11};
-
-	int test_int1 = 2;
-
-
-	cout << solution(test_int1, test_vector1) << endl;
-
-	return 0;
 }
