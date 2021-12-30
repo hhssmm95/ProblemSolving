@@ -91,3 +91,16 @@ string solution(string m, vector<string> musicinfos) {
 
 	return answer;
 }
+
+int main()
+{
+	vector<string> test_vector1 = { "03:00,03:30,FOO,CC#B", "04:00,04:08,BAR,CC#BCC#BCC#B" };
+
+	string test_string1 = "CC#BCC#BCC#BCC#B";
+
+
+	string result = solution(test_string1, test_vector1);
+
+	cout << result << endl;
+	return 0;
+}
