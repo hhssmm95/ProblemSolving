@@ -1,6 +1,7 @@
 #include <string>
 #include <vector>
 #include <map>
+#include <iostream>
 
 using namespace std;
 
@@ -60,4 +61,24 @@ vector<int> solution(string msg)
 
 
 	return answer;
+}
+
+int main()
+{
+	
+	string test_string = "TOBEORNOTTOBEORTOBEORNOT";
+
+	vector<int> result = solution(test_string);
+
+
+	//string result = solution(test_string1);
+
+	//cout << result << endl;
+
+	for (auto result_iter : result)
+	{
+		cout << result_iter << " ";
+	}
+	cout << endl;
+	return 0;
 }
