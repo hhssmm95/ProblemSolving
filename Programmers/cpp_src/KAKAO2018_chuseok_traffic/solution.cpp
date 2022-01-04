@@ -37,16 +37,6 @@ pair<int, int> LineToSecond(string line)
 	return { start_as_second, finish_as_second};
 }
 
-//bool OnLineCheck(int check_time, string line)
-//{
-//	pair<int, int> start_end_pair = LineToSecond(line);
-//	if (check_time >= start_end_pair.first && check_time <= start_end_pair.second)
-//		return true;
-//	else
-//		return false;
-//	
-//}
-
 int solution(vector<string> lines) {
 	int answer = 0;
 
@@ -78,7 +68,7 @@ int solution(vector<string> lines) {
 
 }
 
-//코테용 main 출력
+
 int main()
 {
 	vector<string> test_vector1 = { "2016-09-15 20:59:57.421 0.351s",
