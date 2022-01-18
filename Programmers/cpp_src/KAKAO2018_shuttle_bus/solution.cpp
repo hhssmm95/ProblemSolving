@@ -59,10 +59,6 @@ string solution(int n, int t, int m, vector<string> timetable) {
 		{
 			return minuteToTime(time);
 		}
-		else if (i == n - 1 && line.size() == m)
-		{
-			return minuteToTime(line[line.size() - 1] - 1);
-		}
 	}
 
 }
