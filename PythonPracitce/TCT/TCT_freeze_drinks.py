@@ -1,6 +1,5 @@
 dX = [0, 0, 1, -1]
 dY = [1, -1, 0, 0]
-visited = []
 
 def dfs(frame, index, visited):
     pos = index
