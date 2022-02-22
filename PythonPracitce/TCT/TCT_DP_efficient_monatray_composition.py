@@ -10,6 +10,9 @@ def solution(N, currencies, M):
                 cache[j] = min(cache[j], cache[j-i] + 1)
 
     answer = cache[M]
+    if answer == 10001:
+        return -1
+        
     return answer
 
         # a[i] = min(a[i-k]+1, ai)
