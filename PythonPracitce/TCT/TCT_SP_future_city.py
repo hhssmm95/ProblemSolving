@@ -15,16 +15,15 @@ def solution(N, M, graph_info, X, K):
 
 def floyd_warshal(N, X, K, graph):
 
-    min_val = INF
+    min_dist = INF
     for a in range(1, N+1):
         for i in range(1, N+1):
             for j in range(1, N+1):
-                if i == 1 and a == K and j == X and graph[i][a] + graph[a][j] < min_val:
-                    min_val = graph[i][a] + graph[a][j]
-
                 graph[i][j] = min(graph[i][j], graph[i][a] + graph[a][j])
 
-    return min_val
+    min_dist = graph[1][K] + graph[K][X]
+
+    return min_dist
 
 
 solution(5, 7, [(1,2), (1,3), (1,4), (2,4), (3,4), (3,5), (4,5)], 4, 5)
