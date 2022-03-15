@@ -1,6 +1,3 @@
-from re import I
-
-
 def solution(N, distances, costs):
     now = 0
     next = 0
