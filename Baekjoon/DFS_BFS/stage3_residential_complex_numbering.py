@@ -12,7 +12,7 @@ def bfs(N, pos, graph, bfs_visited):
     bfs_visited[pos[0]][pos[1]] = True
 
     count = 0
-
+ 
     while bfs_queue:
         now = bfs_queue.popleft()
         count += 1
