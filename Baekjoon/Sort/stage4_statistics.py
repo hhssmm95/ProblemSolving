@@ -4,9 +4,9 @@ input = sys.stdin.readline
 
 
 '''
-산술평균 : N개의 수들의 합을 N으로 나눈 값
+산술평균 : N개의 수들의 합을 N으로 나눈 값 (소수점 이하 첫째 자리에서 반올림한 값을 출력)
 중앙값 : N개의 수들을 증가하는 순서로 나열했을 경우 그 중앙에 위치하는 값
-최빈값 : N개의 수들 중 가장 많이 나타나는 값
+최빈값 : N개의 수들 중 가장 많이 나타나는 값 (여러 개 있을 때에는 최빈값 중 두 번째로 작은 값을 출력)
 범위 : N개의 수들 중 최댓값과 최솟값의 차이
 '''
     
@@ -68,35 +68,57 @@ for i in range(abs(min_val)+1):
     for j in range(neg_counter[i]):
         temp_array.append(-i)
 
-sorted_array = []
-temp_array.reverse()
-sorted_array += temp_array
-
+# 이 부분 리스트 컴프리헨션으로 sorted_array를 처음부터 temp_array의 리버스값으로 초기화해서 메모리아낄것
+sorted_array = [i for i in temp_array[::-1]]
 for i in range(max_val + 1):
     for j in range(pos_counter[i]):
         sorted_array.append(i)
 
+mode_max = max(neg_mode_max, pos_mode_max)
+
 mode = 0
-if neg_mode_max == 1 and pos_mode_max == 1:
+
+if neg_mode_max > pos_mode_max:
     if len(neg_mode_heap) == 1:
+        mode = heapq.heappop(neg_mode_heap)
+    else:
+        heapq.heappop(neg_mode_heap)
+        mode = heapq.heappop(neg_mode_heap)
+elif neg_mode_max == pos_mode_max:
+    if len(neg_mode_heap) == 1:
+        heapq.heappop(neg_mode_heap)
         mode = heapq.heappop(pos_mode_heap)
     else:
         heapq.heappop(neg_mode_heap)
         mode = heapq.heappop(neg_mode_heap)
-
-elif neg_mode_max >= pos_mode_max:
-    if len(neg_mode_heap) == 1:
-        mode = heapq.heappop(neg_mode_heap)
-    else:
-        heapq.heappop(neg_mode_heap)
-        mode = heapq.heappop(neg_mode_heap)
-
 elif neg_mode_max < pos_mode_max:
     if len(pos_mode_heap) == 1:
         mode = heapq.heappop(pos_mode_heap)
     else:
         heapq.heappop(pos_mode_heap)
         mode = heapq.heappop(pos_mode_heap)
+
+
+# if neg_mode_max == 1 and pos_mode_max == 1:
+#     if len(neg_mode_heap) == 1:
+#         mode = heapq.heappop(pos_mode_heap)
+#     else:
+#         heapq.heappop(neg_mode_heap)
+#         mode = heapq.heappop(neg_mode_heap)
+
+# elif neg_mode_max >= pos_mode_max:
+#     if len(neg_mode_heap) == 1:
+#         mode = heapq.heappop(neg_mode_heap)
+#     else:
+#         heapq.heappop(neg_mode_heap)
+#         mode = heapq.heappop(neg_mode_heap)
+
+# elif neg_mode_max < pos_mode_max:
+#     if len(pos_mode_heap) == 1:
+#         mode = heapq.heappop(pos_mode_heap)
+#     else:
+#         heapq.heappop(pos_mode_heap)
+#         mode = heapq.heappop(pos_mode_heap)
 
 arithmetic_mean = 0 #round(sum_val // N, 0)
 if sum_val > 0:
