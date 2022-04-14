@@ -49,6 +49,5 @@ def backtraking(count, start):
                 team1.remove(i)
                 visited[i] = False
 
-if __name__ == "__main__":
-    backtraking(0, 0)
-    print(min_val)
+backtraking(0, 0)
+print(min_val)
