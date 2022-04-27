@@ -7,8 +7,8 @@ x = int(input())
 
 head, tail = 0, n-1
 count = 0
-
 array.sort()
+
 while head<tail:
     result = array[head]+array[tail]
 
