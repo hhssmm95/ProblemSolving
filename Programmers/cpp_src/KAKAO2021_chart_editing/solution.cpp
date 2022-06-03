@@ -1,24 +1,10 @@
 //#include<bits/stdc++.h>
 #include <vector>
 #include <string>
-#include <algorithm>
-#include <list>
-//#include <cmath>
-//#include <iostream>
-//#include <climits>
-//#include <unordered_map>
-//#include <unordered_set>
 #include <stack>
 #include<iostream>
-#include<unordered_map>
-//#include <queue>
 
 using namespace std;
-
-//list<int> LL;
-//list<int>::iterator select;
-//stack<int> vStack;
-//string answer;
 
 struct Node
 {
@@ -87,21 +73,6 @@ void processOrder(string order, Node*& LL,
 			select->nextNode->prevNode = select->prevNode;
 			select = select->nextNode;
 		}
-
-		//vStack.push(*select);
-
-		/*int idx = *select;
-		answer[idx] = 'X';
-		delStack.push(idx);
-
-		select = LL.erase(select);
-		delMap[idx] = { *select, select };
-
-		if (select == LL.end())
-		{
-			select--;
-		}*/
-
 	}
 	else
 	{
@@ -127,40 +98,6 @@ void processOrder(string order, Node*& LL,
 		}
 		answer[delStack.top()->data] = 'O';
 		delStack.pop();
-		/*int idx = delStack.top();
-		while (true)
-		{
-			if (idx != delMap[idx].first)
-			{
-				idx = delMap[idx].first;
-				continue;
-			}
-			else
-			{
-				if (delStack.top() < idx)
-					delMap[delStack.top()] = { delStack.top(), LL.insert(delMap[idx].second, delStack.top()) };
-				else
-					delMap[delStack.top()] = { delStack.top(), LL.insert(++delMap[idx].second, delStack.top()) };
-				answer[delStack.top()] = 'O';
-				delStack.pop();
-				break;
-			}
-		}*/
-		/*auto insert_iter = LLS.top().first;
-		int dir = LLS.top().second.first;
-		int idx = LLS.top().second.second;
-
-		if (dir == 1)
-		{
-			LL.insert(insert_iter, idx);
-		}
-		else
-			LL.insert(++insert_iter, idx);
-		answer[idx] = 'O';
-		LLS.pop();*/
-		//LL.insert(upper_bound(LL.begin(), LL.end(), vStack.top()), vStack.top());
-		//answer[vStack.top()] = 'O';
-		//vStack.pop();
 	}
 }
 
@@ -213,30 +150,7 @@ string solution(int n, int k, vector<string> cmd) {
 int main()
 {
 	cout << solution(8, 2, { "D 2","C","U 3","C","D 4","C","U 2","Z","Z","U 1","C" }) << endl;
-	/*------------ 1차원 vector ------------*/
-	//vector<int> test_vector1 = { 0, 0, 0, 0, 0 };//{9, 20, 28, 18, 11};
-
-	//vector<string> test_svector1 = { "abc", "def" };
-
-
-	/*------------2차원 vector------------*/
-	//vector<vector<int>> test2vector = { {0,0},{0,0} };
-
-	/*------------상수값------------------*/
-	//string test_string1 = "abc";
-
-	//int test_int1 = 0;
-
-	/*------------출력--------------------*/
-	//VectorPrint(test_svector1);
-
-	//DVectorPrint(test_2svector);
-
-	//NormalPrint(test_string1);
-
-
-
-	//solution(test_int1, test_vector1, test_vector2);
+	
 
 	return 0;
 
