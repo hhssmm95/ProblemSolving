@@ -14,6 +14,7 @@ for i in range(N):
         elif val == 1:
             except_wall_size-=1
     MAP.append(data)
+    
 
 R = [1,-1,0,0]
 C = [0,0,1,-1]
