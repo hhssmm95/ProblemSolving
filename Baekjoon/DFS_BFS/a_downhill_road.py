@@ -32,24 +32,4 @@ def DFS(pos):
 
     return cache[r][c]
 
-def BFS():
-    bfs_queue = deque()
-    bfs_queue.append((0,0))
-    count = 0
-    while bfs_queue:
-        r,c = bfs_queue.popleft()
-
-        if (r,c) == (M-2,N-1) or (r,c) == (M-1,N-2):
-            count+=1
-            continue
-
-        for i in range(DIR):
-            nr = r + R[i]
-            nc = c + C[i]
-
-            if 0 <= nr < M and 0 <= nc < N:
-                if heightMap[nr][nc] < heightMap[r][c]:
-                    bfs_queue.append((nr,nc))
-    print(count)
-
 print(DFS((0,0)))
