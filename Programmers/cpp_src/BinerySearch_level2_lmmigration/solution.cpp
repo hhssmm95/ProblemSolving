@@ -1,6 +1,7 @@
 #include <string>
 #include <vector>
 #include <algorithm>
+#include <iostream>
 using namespace std;
 
 
@@ -41,7 +42,8 @@ long long solution(int n, vector<int> times) {
 
 
 int main()
-{
-	cout << solution(6, { 7,10 }) << endl;
+{	
+	string s = "abcdefg";
+	cout << s.substr(1) << endl;
 	return 0;
 }
