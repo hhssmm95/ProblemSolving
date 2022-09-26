@@ -32,7 +32,7 @@ def solution(sticker):
 '''
 
 cache = []
-
+ 
 def DP(index, sticker):
     p_index = index-1 if index-1>=0 else len(sticker)-1
     pp_index = p_index-1 if p_index-1>=0 else len(sticker)-1
