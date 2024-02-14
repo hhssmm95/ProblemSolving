@@ -351,3 +351,8 @@ MigrationBackup/
 *.filters
 *.sln
 *.vcxproj
+Programmers/cpp_src/AlgorithmProblemKit/.vscode/launch.json
+Programmers/cpp_src/AlgorithmProblemKit/.vscode/settings.json
+Programmers/cpp_src/AlgorithmProblemKit/.vscode/tasks.json
+Programmers/cpp_src/AlgorithmProblemKit/Greedy/.vscode/c_cpp_properties.json
+Programmers/cpp_src/AlgorithmProblemKit/Greedy/Greedy_Level1_TrainingSuit/.cph/.Solution.cpp_dd10603f88cb15c9d29405aacf8357f2.prob
