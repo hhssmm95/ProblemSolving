@@ -5,10 +5,9 @@
 using namespace std;
 
 vector<int> solution(vector<string> name, vector<int> yearning, vector<vector<string>> photo) {
-    vector<int> answer;
-    
+    vector<int> answer = {1,2};
     unordered_map<string,int> name_map;
-    
+
     for(int i = 0; i<name.size(); i++)
     {
         name_map.insert({name[i], yearning[i]});
